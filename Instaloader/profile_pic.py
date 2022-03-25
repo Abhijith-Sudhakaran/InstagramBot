@@ -7,10 +7,10 @@ from instaloader.exceptions import QueryReturnedNotFoundException, ProfileNotExi
 
 @Client.on_message(filters.private & filters.command(["profile_pic", "dp"]))
 async def dp(_, msg):
-    status = await msg.reply('Please Wait...', quote=True)
+    status = await msg.reply('𝙋𝙡𝙚𝙖𝙨𝙚 𝙒𝙖𝙞𝙩 𝙎𝙚𝙖𝙧𝙘𝙝𝙞𝙣𝙜 𝙄𝙣𝙨𝙩𝙖𝙜𝙧𝙖𝙢 𝘼𝙘𝙘𝙤𝙪𝙣𝙩', quote=True)
     if len(msg.command) == 1:
         await msg.reply("Please do not use empty command. Below is the right format to get a profile pic. "
-                        "\n\n`/profile_pic instagram-username` \n\nExample : `/profile_pic taaarannn`")
+                        "\n\n`/profile_pic instagram-username` \n\nExample : `/profile_pic 𝙐𝙨𝙚𝙧𝙣𝙖𝙢𝙚`")
         return
     elif len(msg.command) > 2:
         await msg.reply("Use 1 username at a time.")
@@ -27,7 +27,7 @@ async def dp(_, msg):
     files = os.listdir(text.lower())
     for file in files:
         if file.endswith(".jpg"):
-            caption = f"Profile Picture of [@{text}](https://instagram.com/{text}) \n\nBy @StarkBots"
+            caption = f"Profile Picture of [@{text}](https://instagram.com/{text}) \n\n𝙐𝙥𝙡𝙤𝙖𝙙𝙚𝙙 𝙗𝙮 [Instander 💌](https://t.me/Instander_unoffi_bot)"
             await msg.reply_photo(f"{text}/{file}", caption=caption)
             await status.delete()
     shutil.rmtree(text)
